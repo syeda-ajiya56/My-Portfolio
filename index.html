@@ -3,138 +3,761 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ajiya Shaukat — Portfolio</title>
+  <title>Ajiya Shaukat — Software Engineering Student & Full-Stack Developer</title>
+  <meta name="description" content="Ajiya Shaukat — Software Engineering Student & Full-Stack Web Developer based in Karachi, Pakistan. Building scalable, user-friendly web apps with React, Node.js, Java, Spring Boot &amp; Python.">
+
+  <!-- Favicon (generate your own at favicon.io and replace these) -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon.ico">
+
+  <!-- Open Graph (LinkedIn / WhatsApp / Twitter previews) -->
+  <meta property="og:title"       content="Ajiya Shaukat — Full-Stack Developer">
+  <meta property="og:description" content="Software Engineering student building scalable web apps with React, Spring Boot &amp; Python. Based in Karachi, Pakistan.">
+  <meta property="og:image"       content="11.jpg">
+  <meta property="og:type"        content="website">
+  <meta name="twitter:card"       content="summary_large_image">
+  <meta name="twitter:title"      content="Ajiya Shaukat — Full-Stack Developer">
+  <meta name="twitter:description" content="Software Engineering student building scalable web apps with React, Spring Boot &amp; Python.">
+  <meta name="twitter:image"      content="11.jpg">
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
+<!-- ═══════════════════════════ PRELOADER ═══════════════════════════ -->
+<div id="preloader" aria-hidden="true">
+  <div class="pre-ring">
+    <span class="pre-logo">AS</span>
+    <svg viewBox="0 0 80 80" class="pre-circle">
+      <defs>
+        <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%"   stop-color="#7c3aed"/>
+          <stop offset="100%" stop-color="#22d3ee"/>
+        </linearGradient>
+      </defs>
+      <circle cx="40" cy="40" r="36"/>
+    </svg>
+  </div>
+</div>
+
+<!-- ═══════════════════════════ HEADER ═══════════════════════════ -->
+<header id="site-header">
   <div class="container">
     <nav>
       <a href="#home" class="brand"><span class="logo">AS</span>Ajiya Shaukat</a>
-      <div class="nav-links">
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#qualities">Qualities</a>
-        <a href="#contact" class="cta">Say Hello</a>
+
+      <!-- Desktop links -->
+      <div class="nav-links" id="nav-links">
+          <a href="#about"     data-section="about">About</a>
+        <a href="#skills"    data-section="skills">Skills</a>
+        <a href="#projects"  data-section="projects">Projects</a>
+        <a href="#education" data-section="education">Education</a>
+        <a href="#future"    data-section="future">Future Work</a>
+        <a href="#contact"   class="cta">Say Hello</a>
+      </div>
+
+      <!-- Theme toggle + Hamburger -->
+      <div class="nav-controls">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark mode" title="Toggle theme">
+          <i class="fas fa-moon" id="theme-icon"></i>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </nav>
   </div>
 </header>
 
-<!-- Hero -->
+<!-- ═══════════════════════════ HERO ═══════════════════════════ -->
 <main id="home" class="hero">
   <div class="container hero-inner">
-    <div>
-      <h1 class="headline">Hi, I'm <span class="grad">Ajiya Shaukat</span></h1>
-      <p class="lede">I build fast, accessible web apps and data-driven tools. Open for freelance & full-time opportunities.</p>
-      <div class="actions">
-        <a class="btn primary" href="#projects">View Projects</a>
-        <a class="btn" href="#skills">Explore Skills</a>
+    <div class="hero-text">
+      <p class="hero-tag fade-up">👋 Available for opportunities</p>
+      <h1 class="headline fade-up delay-1">Hi, I'm <span class="grad">Ajiya Shaukat</span></h1>
+      <p class="lede fade-up delay-2">
+        I'm a <span class="typed-text" id="typed"></span><span class="typed-cursor">|</span>
+      </p>
+      <p class="lede-sub fade-up delay-3">Software Engineering Student · Karachi, Pakistan · Open for freelance &amp; full-time roles.</p>
+      <div class="actions fade-up delay-4">
+        <a class="btn primary" href="#projects"><i class="fas fa-folder-open"></i> View Projects</a>
+        <a class="btn" href="#skills"><i class="fas fa-code"></i> Explore Skills</a>
+        <a class="btn resume-btn" href="Ajiya Shaukat-1.pdf" download aria-label="Download Resume">
+          <i class="fas fa-download"></i> Resume
+        </a>
       </div>
     </div>
-    <div>
-      <img src="11.jpg" alt="Profile" class="hero-img">
+    <div class="hero-photo fade-up delay-2">
+      <div class="photo-ring">
+        <img src="11.jpg" alt="Ajiya Shaukat — profile photo" class="hero-img">
+      </div>
+      <div class="hero-badge"><i class="fas fa-star"></i> Full-Stack Dev</div>
     </div>
   </div>
+  <!-- Scroll hint -->
+  <a href="#about" class="scroll-hint" aria-label="Scroll down">
+    <i class="fas fa-chevron-down"></i>
+  </a>
 </main>
 
-<!-- Skills -->
-<section id="skills">
+<!-- ═══════════════════════════ ABOUT ═══════════════════════════ -->
+<section id="about">
   <div class="container">
-    <div class="section-head"><h2>My Skills & Expertise</h2></div>
-    <div class="cards">
-      <article class="glass-card"><div class="card-icon"><i class="fas fa-laptop-code"></i></div><h3>Frontend Development</h3><p class="muted">Responsive and interactive UIs.</p></article>
-      <article class="glass-card"><div class="card-icon"><i class="fas fa-server"></i></div><h3>Backend Development</h3><p class="muted">APIs, databases, and secure systems.</p></article>
-      <article class="glass-card"><div class="card-icon"><i class="fas fa-pencil-ruler"></i></div><h3>UI/UX Design</h3><p class="muted">User-friendly, aesthetic, and efficient experiences.</p></article>
+    <div class="section-head reveal">
+      <span class="section-label">About Me</span>
+      <h2>A little about who I am</h2>
+    </div>
+    <div class="about-grid reveal">
+      <div class="about-text glass-card">
+        <p>Motivated and detail-oriented Software Engineering student with hands-on experience in full-stack web development using React, Node.js, Java, Spring Boot, SQL Server, MySQL, and Python.</p>
+        <p style="margin-top:14px">I've built academic and personal projects ranging from CPU scheduling simulators to disaster management platforms and lab management systems. I'm passionate about creating scalable, user-friendly applications and eager to contribute to innovative software development teams.</p>
+        <p style="margin-top:14px">When I'm not coding, I'm exploring anime aesthetics, virtual art, and finding ways to make the web a more beautiful place.</p>
+        <div class="about-stats">
+          <div class="stat"><span class="stat-num">2+</span><span class="stat-label">Years Coding</span></div>
+          <div class="stat"><span class="stat-num">5+</span><span class="stat-label">Projects Built</span></div>
+          <div class="stat"><span class="stat-num">12+</span><span class="stat-label">Technologies</span></div>
+        </div>
+      </div>
+      <div class="about-side">
+        <div class="glass-card info-card">
+          <ul class="info-list">
+            <li><i class="fas fa-map-marker-alt"></i><span>Karachi, Pakistan</span></li>
+            <li><i class="fas fa-phone"></i><span>03002357534</span></li>
+            <li><i class="fas fa-envelope"></i><span>ajiyashaukat.swips@gmail.com</span></li>
+            <li><i class="fab fa-github"></i><a href="https://github.com/syeda-ajiya56" target="_blank" rel="noopener noreferrer">syeda-ajiya56</a></li>
+            <li><i class="fab fa-linkedin"></i><a href="https://linkedin.com/in/ajiya-shaukat-8ab604348" target="_blank" rel="noopener noreferrer">ajiya-shaukat</a></li>
+            <li><i class="fas fa-graduation-cap"></i><span>BSE Student · Sir Syed UET</span></li>
+          </ul>
+          <a class="btn primary" style="margin-top:18px;width:100%;text-align:center;display:block" href="Ajiya Shaukat-1.pdf" download>
+            <i class="fas fa-download"></i> Download Resume
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- Tech -->
+<!-- ═══════════════════════════ SKILLS ═══════════════════════════ -->
+<section id="skills">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-label">What I Do</span>
+      <h2>Skills &amp; Expertise</h2>
+    </div>
+
+    <!-- Skill area cards -->
+    <div class="cards reveal">
+      <article class="glass-card skill-area">
+        <div class="card-icon"><i class="fas fa-laptop-code"></i></div>
+        <h3>Frontend Development</h3>
+        <p class="muted">Responsive, accessible UIs with HTML5, CSS3, React and JavaScript.</p>
+      </article>
+      <article class="glass-card skill-area">
+        <div class="card-icon"><i class="fas fa-server"></i></div>
+        <h3>Backend Development</h3>
+        <p class="muted">RESTful APIs and secure server-side logic with Node.js, Spring Boot, Python &amp; Java.</p>
+      </article>
+      <article class="glass-card skill-area">
+        <div class="card-icon"><i class="fas fa-database"></i></div>
+        <h3>Database Systems</h3>
+        <p class="muted">Relational database design and querying with MySQL and SQL Server.</p>
+      </article>
+      <article class="glass-card skill-area">
+        <div class="card-icon"><i class="fas fa-robot"></i></div>
+        <h3>AI &amp; Software Engineering</h3>
+        <p class="muted">Prompt engineering, software design principles, and scalable architecture.</p>
+      </article>
+    </div>
+
+    <!-- Proficiency bars -->
+    <div class="skill-bars reveal" style="margin-top:52px">
+      <div class="section-head" style="margin-bottom:32px"><h3 style="font-size:1.15rem;font-weight:700">Proficiency Levels</h3></div>
+      <div class="bars-grid">
+        <div class="bar-item">
+          <div class="bar-label"><span>HTML &amp; CSS</span><span class="bar-pct">90%</span></div>
+          <div class="bar-track"><div class="bar-fill" data-width="90"></div></div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-label"><span>JavaScript</span><span class="bar-pct">78%</span></div>
+          <div class="bar-track"><div class="bar-fill" data-width="78"></div></div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-label"><span>React</span><span class="bar-pct">75%</span></div>
+          <div class="bar-track"><div class="bar-fill" data-width="75"></div></div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-label"><span>Python</span><span class="bar-pct">80%</span></div>
+          <div class="bar-track"><div class="bar-fill" data-width="80"></div></div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-label"><span>Java</span><span class="bar-pct">72%</span></div>
+          <div class="bar-track"><div class="bar-fill" data-width="72"></div></div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-label"><span>Spring Boot</span><span class="bar-pct">68%</span></div>
+          <div class="bar-track"><div class="bar-fill" data-width="68"></div></div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-label"><span>MySQL / SQL Server</span><span class="bar-pct">75%</span></div>
+          <div class="bar-track"><div class="bar-fill" data-width="75"></div></div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-label"><span>Node.js</span><span class="bar-pct">65%</span></div>
+          <div class="bar-track"><div class="bar-fill" data-width="65"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ TECH ═══════════════════════════ -->
 <section class="tech-section">
   <div class="container">
-    <div class="section-head"><h2>Technologies I Work With</h2></div>
-    <div class="techgrid">
+    <div class="section-head reveal">
+      <span class="section-label">Tech Stack</span>
+      <h2>Technologies I Work With</h2>
+    </div>
+    <div class="techgrid reveal">
       <div class="glass-card tech"><i class="fab fa-html5"></i>HTML5</div>
       <div class="glass-card tech"><i class="fab fa-css3-alt"></i>CSS3</div>
       <div class="glass-card tech"><i class="fab fa-js-square"></i>JavaScript</div>
+      <div class="glass-card tech"><i class="fab fa-react"></i>React</div>
+      <div class="glass-card tech"><i class="fab fa-node-js"></i>Node.js</div>
       <div class="glass-card tech"><i class="fab fa-java"></i>Java</div>
+      <div class="glass-card tech"><i class="fas fa-leaf"></i>Spring Boot</div>
       <div class="glass-card tech"><i class="fab fa-python"></i>Python</div>
       <div class="glass-card tech"><i class="fas fa-database"></i>MySQL</div>
+      <div class="glass-card tech"><i class="fas fa-server"></i>SQL Server</div>
       <div class="glass-card tech"><i class="fab fa-git-alt"></i>Git</div>
-      <div class="glass-card tech"><i class="fas fa-flask"></i>Flask</div>
+      <div class="glass-card tech"><i class="fas fa-desktop"></i>JavaFX</div>
     </div>
   </div>
 </section>
 
-<!-- Projects -->
+<!-- ═══════════════════════════ PROJECTS ═══════════════════════════ -->
 <section id="projects">
   <div class="container">
-    <div class="section-head"><h2>My Projects</h2></div>
-    <div class="projects">
-      <article class="glass-card project-card completed"><div class="p-media"><img src="python game.gif" alt="Python Typing Test"></div><div class="p-body"><h3>Python Typing Test Game</h3><p class="muted">A fun game to test typing speed & accuracy.</p><div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Python</span></div></div></article>
-      <article class="glass-card project-card completed"><div class="p-media"><img src="teckstock.gif" alt="TechStock"></div><div class="p-body"><h3>TechStock (Lab Management)</h3><p class="muted">Streamlined lab inventory & issue/return management.</p><div class="tags"><span class="tag">Java</span><span class="tag">MySQL</span></div></div></article>
-      <article class="glass-card project-card coming-soon"><div class="p-media"><img src="museum.gif" alt="Virtual Museum"></div><div class="p-body"><h3>Virtual Museum</h3><p class="muted">Interactive experience showcasing historical artifacts.</p><div class="tags"><span class="tag">Coming Soon</span></div></div></article>
-      <article class="glass-card project-card coming-soon"><div class="p-media"><img src="anime.gif" alt="Anime Room"></div><div class="p-body"><h3>Virtual Anime Room</h3><p class="muted">A cozy virtual space inspired by anime aesthetics.</p><div class="tags"><span class="tag">Coming Soon</span></div></div></article>
+    <div class="section-head reveal">
+      <span class="section-label">My Work</span>
+      <h2>Featured Projects</h2>
+    </div>
+
+    <!-- Filter tabs -->
+    <div class="filter-tabs reveal">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="react">React</button>
+      <button class="filter-btn" data-filter="java">Java</button>
+      <button class="filter-btn" data-filter="python">Python</button>
+      <button class="filter-btn" data-filter="coming-soon">In Progress</button>
+    </div>
+
+    <div class="projects reveal">
+
+      <!-- Project 1: Two Phase Hybrid Priority Algorithm -->
+      <article class="glass-card project-card completed" data-tags="react">
+        <div class="p-media p-color-1">
+          <img src="os.gif" alt="Two Phase Hybrid Priority Algorithm — CPU scheduling simulator">
+          <div class="p-overlay">
+            <a href="https://github.com/syeda-ajiya56" target="_blank" rel="noopener noreferrer" class="p-link" aria-label="View on GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
+        <div class="p-body">
+          <h3>Two Phase Hybrid Priority Algorithm</h3>
+          <p class="muted">Full-stack CPU scheduling simulator with THPA implementation, algorithm comparison, interactive Gantt charts &amp; PDF report generation.</p>
+          <div class="tags">
+            <span class="tag">React</span>
+            <span class="tag">Spring Boot</span>
+            <span class="tag">SQL Server</span>
+          </div>
+          <div class="p-actions">
+            <a href="https://github.com/syeda-ajiya56" target="_blank" rel="noopener noreferrer" class="btn p-btn">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 2: Phoenix Grid -->
+      <article class="glass-card project-card completed" data-tags="react">
+        <div class="p-media p-color-2">
+          <img src="phoenix.gif" alt="Phoenix Grid — disaster management platform">
+          <div class="p-overlay">
+            <a href="https://github.com/syeda-ajiya56" target="_blank" rel="noopener noreferrer" class="p-link" aria-label="View on GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
+        <div class="p-body">
+          <h3>Phoenix Grid</h3>
+          <p class="muted">Full-stack disaster management platform with real-time monitoring, AI-powered dashboards &amp; secure user management.</p>
+          <div class="tags">
+            <span class="tag">React</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">SQL Server</span>
+          </div>
+          <div class="p-actions">
+            <a href="https://github.com/syeda-ajiya56" target="_blank" rel="noopener noreferrer" class="btn p-btn">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 3: TechStock -->
+      <article class="glass-card project-card completed" data-tags="java">
+        <div class="p-media p-color-3">
+          <img src="teckstock.gif" alt="TechStock — lab management system">
+          <div class="p-overlay">
+            <a href="https://github.com/syeda-ajiya56" target="_blank" rel="noopener noreferrer" class="p-link" aria-label="View on GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
+        <div class="p-body">
+          <h3>TechStock (Lab Management)</h3>
+          <p class="muted">JavaFX &amp; MySQL lab management system with inventory tracking, issue/return logs, reporting &amp; secure authentication.</p>
+          <div class="tags">
+            <span class="tag">Java</span>
+            <span class="tag">JavaFX</span>
+            <span class="tag">MySQL</span>
+          </div>
+          <div class="p-actions">
+            <a href="https://github.com/syeda-ajiya56" target="_blank" rel="noopener noreferrer" class="btn p-btn">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 4: Python Typing Game -->
+      <article class="glass-card project-card completed" data-tags="python">
+        <div class="p-media p-color-4">
+          <img src="python game.gif" alt="Python Typing Test Game">
+          <div class="p-overlay">
+            <a href="https://github.com/syeda-ajiya56" target="_blank" rel="noopener noreferrer" class="p-link" aria-label="View on GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
+        <div class="p-body">
+          <h3>Python Typing Test Game</h3>
+          <p class="muted">A fun, interactive game to test and improve typing speed &amp; accuracy, applying UI design and programming logic.</p>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+          </div>
+          <div class="p-actions">
+            <a href="https://github.com/syeda-ajiya56" target="_blank" rel="noopener noreferrer" class="btn p-btn">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 5: Virtual Museum -->
+      <article class="glass-card project-card coming-soon" data-tags="coming-soon">
+        <div class="p-media">
+          <img src="museum.gif" alt="Virtual Museum — interactive historical experience">
+          <span class="cs-badge">Coming Soon</span>
+        </div>
+        <div class="p-body">
+          <h3>Virtual Museum</h3>
+          <p class="muted">Interactive experience showcasing historical artifacts in an immersive digital space.</p>
+          <div class="tags">
+            <span class="tag cs-tag">In Progress</span>
+          </div>
+        </div>
+      </article>
+
     </div>
   </div>
 </section>
 
-<!-- Qualities -->
-<section id="qualities">
+<!-- ═══════════════════════════ EDUCATION ═══════════════════════════ -->
+<section id="education">
   <div class="container">
-    <div class="section-head"><h2>My Personal Qualities</h2></div>
-    <div class="qualities">
-      <div class="glass-card quality"><i class="fas fa-bolt"></i><h3>Problem Solver</h3><p class="muted">Love tackling challenges.</p></div>
-      <div class="glass-card quality"><i class="fas fa-handshake"></i><h3>Team Player</h3><p class="muted">Strong collaboration skills.</p></div>
-      <div class="glass-card quality"><i class="fas fa-lightbulb"></i><h3>Innovative</h3><p class="muted">Creative and unique ideas.</p></div>
+    <div class="section-head reveal">
+      <span class="section-label">Background</span>
+      <h2>Education</h2>
     </div>
-  </div>
-</section>
+    <div class="edu-timeline reveal">
 
-<!-- Contact -->
-<section id="contact">
-  <div class="container">
-    <div class="section-head"><h2>Say Hello</h2><p class="muted">Open to freelance and full-time opportunities. Let's talk.</p></div>
-    <div class="contact">
-      <div class="glass-card card">
-        <h3>Get in Touch</h3>
-        <p class="muted">Always happy to discuss new projects or collaborations.</p>
-        <p><b>Location:</b> Karachi, Pakistan</p>
-        <p><b>Email:</b> ajiyashaukat.swips@gmail.com</p>
-        <div class="chips">
-          <a class="btn" href="https://instagram.com">Instagram</a>
-          <a class="btn" href="https://github.com/syeda-ajiya56">GitHub</a>
-          <a class="btn" href="https://linkedin.com/in/ajiya-shaukat-8ab604348">LinkedIn</a>
+      <div class="edu-item glass-card">
+        <div class="edu-icon"><i class="fas fa-university"></i></div>
+        <div class="edu-body">
+          <div class="edu-top">
+            <div>
+              <h3>Bachelor of Software Engineering</h3>
+              <p class="edu-inst">Sir Syed University of Engineering &amp; Technology</p>
+            </div>
+            <span class="edu-date">2024 – Present</span>
+          </div>
+          <p class="muted edu-detail">Relevant Coursework: Programming Fundamentals · Object-Oriented Programming · Data Structures · Database Systems · Software Engineering</p>
         </div>
       </div>
-      <form class="glass-card card" onsubmit="handleSubmit(event)">
-        <h3>Contact Form</h3>
-        <label class="field">Name<input required name="name" placeholder="Your name"></label>
-        <label class="field">Email<input required type="email" name="email" placeholder="you@example.com"></label>
-        <label class="field">Message<textarea required name="message" placeholder="Tell me about your project…"></textarea></label>
-        <button class="btn primary" type="submit">Send</button>
-        <p id="form-status" class="muted" role="status"></p>
-      </form>
+
+      <div class="edu-item glass-card">
+        <div class="edu-icon"><i class="fas fa-school"></i></div>
+        <div class="edu-body">
+          <div class="edu-top">
+            <div>
+              <h3>FSc Computer Science</h3>
+              <p class="edu-inst">APWA College</p>
+            </div>
+            <span class="edu-date">2022 – 2024</span>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
+<!-- ═══════════════════════════ QUALITIES ═══════════════════════════ -->
+<section id="qualities">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-label">Who I Am</span>
+      <h2>Personal Qualities</h2>
+    </div>
+    <div class="qualities reveal">
+      <div class="glass-card quality">
+        <i class="fas fa-brain"></i>
+        <h3>Analytical Thinker</h3>
+        <p class="muted">I break down complex problems methodically and approach them with data-driven logic.</p>
+      </div>
+      <div class="glass-card quality">
+        <i class="fas fa-bolt"></i>
+        <h3>Problem Solver</h3>
+        <p class="muted">I enjoy digging into challenges and finding elegant, efficient solutions under pressure.</p>
+      </div>
+      <div class="glass-card quality">
+        <i class="fas fa-handshake"></i>
+        <h3>Team Player</h3>
+        <p class="muted">Collaboration and clear communication are the backbone of everything I build.</p>
+      </div>
+      <div class="glass-card quality">
+        <i class="fas fa-lightbulb"></i>
+        <h3>Innovative</h3>
+        <p class="muted">I think outside the box and love exploring creative approaches to design and development.</p>
+      </div>
+      <div class="glass-card quality">
+        <i class="fas fa-book-open"></i>
+        <h3>Quick Learner</h3>
+        <p class="muted">Always leveling up — new technologies, design trends, or programming paradigms.</p>
+      </div>
+      <div class="glass-card quality">
+        <i class="fas fa-users-cog"></i>
+        <h3>Leadership</h3>
+        <p class="muted">Motivated to lead projects, guide teammates, and drive initiatives from idea to execution.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ FUTURE WORK ═══════════════════════════ -->
+<section id="future">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-label">What's Next</span>
+      <h2>Capstone &amp; Future Work</h2>
+    </div>
+    <div class="future-grid reveal">
+
+      <div class="glass-card future-card">
+        <div class="card-icon"><i class="fas fa-graduation-cap"></i></div>
+        <h3>Capstone Project</h3>
+        <p class="muted">My final-year capstone project is currently in planning. This section will be updated with full details — including the problem statement, tech stack, and outcomes — once the project is underway.</p>
+        <span class="future-badge"><i class="fas fa-clock"></i> Coming in final year</span>
+      </div>
+
+      <div class="glass-card future-card">
+        <div class="card-icon"><i class="fas fa-rocket"></i></div>
+        <h3>Upcoming Projects</h3>
+        <p class="muted">I'm continuously working on new ideas. Upcoming work includes completing the Virtual Museum and Virtual Anime Room experiences, and exploring AI-integrated web applications.</p>
+        <span class="future-badge"><i class="fas fa-code-branch"></i> In progress</span>
+      </div>
+
+      <div class="glass-card future-card">
+        <div class="card-icon"><i class="fas fa-bullseye"></i></div>
+        <h3>Learning Goals</h3>
+        <p class="muted">Currently deepening expertise in cloud deployment, DevOps practices, and advanced React patterns. Planning to pursue certifications and contribute to open-source projects.</p>
+        <span class="future-badge"><i class="fas fa-chart-line"></i> Ongoing</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ CONTACT ═══════════════════════════ -->
+<section id="contact">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-label">Let's Connect</span>
+      <h2>Say Hello</h2>
+      <p class="muted">Open to freelance and full-time opportunities. Let's build something great.</p>
+    </div>
+    <div class="contact reveal">
+
+      <!-- Info card -->
+      <div class="glass-card card">
+        <h3>Get in Touch</h3>
+        <p class="muted" style="margin-top:8px">Always happy to discuss new projects, collaborations, or just a friendly chat about tech.</p>
+        <ul class="contact-info">
+          <li><i class="fas fa-map-marker-alt"></i> Karachi, Pakistan</li>
+          <li><i class="fas fa-phone"></i> 03002357534</li>
+          <li><i class="fas fa-envelope"></i> ajiyashaukat.swips@gmail.com</li>
+        </ul>
+        <div class="social-row">
+          <a href="https://github.com/syeda-ajiya56" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://linkedin.com/in/ajiya-shaukat-8ab604348" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+
+        <!-- Book a Meeting -->
+        <a href="https://calendly.com/YOUR-USERNAME"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="btn book-btn"
+           aria-label="Book a meeting with Ajiya Shaukat on Calendly">
+          <i class="fas fa-calendar-check"></i> Book a Meeting
+        </a>
+      </div>
+
+      <!-- Contact form (EmailJS) -->
+      <form class="glass-card card" id="contact-form" novalidate>
+        <h3>Send a Message</h3>
+        <label class="field">
+          Name
+          <input required name="from_name" placeholder="Your name" autocomplete="name">
+        </label>
+        <label class="field">
+          Email
+          <input required type="email" name="reply_to" placeholder="you@example.com" autocomplete="email">
+        </label>
+        <label class="field">
+          Message
+          <textarea required name="message" placeholder="Tell me about your project…" rows="5"></textarea>
+        </label>
+        <button class="btn primary" type="submit" id="send-btn">
+          <span id="btn-text"><i class="fas fa-paper-plane"></i> Send Message</span>
+          <span id="btn-loader" hidden><i class="fas fa-spinner fa-spin"></i> Sending…</span>
+        </button>
+        <p id="form-status" class="muted" role="status" aria-live="polite"></p>
+      </form>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
 <footer>
-  <div class="container">© <span id="y"></span> Ajiya Shaukat</div>
+  <div class="container footer-inner">
+    <p class="footer-logo"><span class="logo" style="width:34px;height:34px;font-size:.85rem">AS</span> Ajiya Shaukat</p>
+    <div class="footer-socials">
+      <a href="https://github.com/syeda-ajiya56" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://linkedin.com/in/ajiya-shaukat-8ab604348" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    </div>
+    <p class="footer-copy">© <span id="y"></span> Ajiya Shaukat · Built with ❤️ in Karachi</p>
+  </div>
 </footer>
 
+<!-- Back to top -->
+<a href="#home" class="back-top" id="back-top" aria-label="Back to top">
+  <i class="fas fa-arrow-up"></i>
+</a>
+
+<!-- ═══════════════════════════ SCRIPTS ═══════════════════════════ -->
 <script>
-  document.getElementById('y').textContent=new Date().getFullYear()
-  function handleSubmit(e){
-    e.preventDefault()
-    const data = Object.fromEntries(new FormData(e.target).entries())
-    document.getElementById('form-status').textContent = "Thanks " + data.name + "! Message sent.";
-    e.target.reset()
+  // ── Year
+  document.getElementById('y').textContent = new Date().getFullYear();
+
+  // ── Preloader
+  window.addEventListener('load', () => {
+    const pre = document.getElementById('preloader');
+    pre.classList.add('done');
+    setTimeout(() => pre.remove(), 600);
+  });
+
+  // ── Theme toggle (dark / light)
+  const themeToggle = document.getElementById('theme-toggle');
+  const themeIcon   = document.getElementById('theme-icon');
+  const saved = localStorage.getItem('theme');
+  if(saved === 'light') {
+    document.body.classList.add('light');
+    themeIcon.className = 'fas fa-sun';
   }
+  themeToggle.addEventListener('click', () => {
+    const isLight = document.body.classList.toggle('light');
+    themeIcon.className = isLight ? 'fas fa-sun' : 'fas fa-moon';
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+  });
+
+  // ── EmailJS
+  (function(){
+    emailjs.init({ publicKey: "SbKNprPnBzS0fEQTf" });
+  })();
+
+  const contactForm = document.getElementById('contact-form');
+  contactForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    const btnText   = document.getElementById('btn-text');
+    const btnLoader = document.getElementById('btn-loader');
+    const status    = document.getElementById('form-status');
+    btnText.hidden   = true;
+    btnLoader.hidden = false;
+    status.textContent = '';
+    status.className   = 'muted';
+
+    emailjs.sendForm('service_8hiuq7v', 'template_3tbnp6t', this)
+      .then(() => {
+        status.textContent = '✅ Message sent! I\'ll get back to you soon.';
+        status.classList.add('status-ok');
+        contactForm.reset();
+      })
+      .catch(() => {
+        status.textContent = '❌ Something went wrong. Please email me directly.';
+        status.classList.add('status-err');
+      })
+      .finally(() => {
+        btnText.hidden   = false;
+        btnLoader.hidden = true;
+      });
+  });
+
+  // ── Hamburger menu
+  const hamburger = document.getElementById('hamburger');
+  const navLinks  = document.getElementById('nav-links');
+  hamburger.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    hamburger.classList.toggle('active', open);
+    hamburger.setAttribute('aria-expanded', open);
+  });
+  navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      hamburger.classList.remove('active');
+      hamburger.setAttribute('aria-expanded', false);
+    });
+  });
+
+  // ── Header scroll shadow + back-to-top
+  const header  = document.getElementById('site-header');
+  const backTop = document.getElementById('back-top');
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    header.classList.toggle('scrolled', y > 10);
+    backTop.classList.toggle('show', y > 400);
+  });
+
+  // ── Active nav highlighting
+  const sections = document.querySelectorAll('section[id], main[id]');
+  const navItems = document.querySelectorAll('.nav-links a[data-section]');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        navItems.forEach(a => a.classList.remove('active'));
+        const match = document.querySelector(`.nav-links a[data-section="${entry.target.id}"]`);
+        if(match) match.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+  sections.forEach(s => observer.observe(s));
+
+  // ── Scroll-reveal
+  const revealObs = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible');
+        revealObs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal, .fade-up').forEach(el => revealObs.observe(el));
+
+  // ── Skill bar animation
+  const barObs = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.querySelectorAll('.bar-fill').forEach(bar => {
+          bar.style.width = bar.dataset.width + '%';
+        });
+        barObs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  document.querySelectorAll('.skill-bars').forEach(s => barObs.observe(s));
+
+  // ── Typing animation
+  const phrases = [
+    'Full-Stack Developer.',
+    'Software Engineering Student.',
+    'React Developer.',
+    'Problem Solver.',
+    'Creative Coder.'
+  ];
+  let pi = 0, ci = 0, deleting = false;
+  const typedEl = document.getElementById('typed');
+  function type(){
+    const phrase = phrases[pi];
+    if(!deleting){
+      typedEl.textContent = phrase.slice(0, ++ci);
+      if(ci === phrase.length){ deleting = true; return setTimeout(type, 1600); }
+    } else {
+      typedEl.textContent = phrase.slice(0, --ci);
+      if(ci === 0){ deleting = false; pi = (pi+1) % phrases.length; return setTimeout(type, 400); }
+    }
+    setTimeout(type, deleting ? 55 : 90);
+  }
+  type();
+
+  // ── Project filter tabs
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const projectCards = document.querySelectorAll('.project-card');
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      projectCards.forEach(card => {
+        const tags = card.dataset.tags || '';
+        const show = filter === 'all' || tags.includes(filter);
+        card.style.display = show ? '' : 'none';
+        // re-trigger animation
+        if(show) {
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(20px)';
+          requestAnimationFrame(() => {
+            card.style.transition = 'opacity .35s ease, transform .35s ease';
+            card.style.opacity = '';
+            card.style.transform = '';
+          });
+        }
+      });
+    });
+  });
+
+  // ── Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if(target){ e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+    });
+  });
 </script>
 </body>
 </html>
