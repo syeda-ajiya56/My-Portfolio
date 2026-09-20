@@ -119,10 +119,25 @@ The following issues are observed but **not yet fixed**:
 
 ## 8. Hardening Review
 
-This section is reserved for a formal review by a mentor or senior developer.
-
 - **Reviewer / mentor name:** _(to be completed)_
 - **Review date:** _(to be completed)_
 - **Review method:** _(to be completed — e.g. live walkthrough, code review, Lighthouse audit)_
-- **Must-fix findings:** _(to be completed)_
-- **Actions taken:** _(to be completed)_
+
+### Reviewer findings and verification
+
+| Item | Finding |
+|---|---|
+| Resume link | Verified working; the resume PDF exists at the expected path. |
+| GitHub, LinkedIn, and Calendly links | Verified working. |
+| Header navigation | Verified working. |
+| Mobile navigation and layout | Verified working at 375 px with no horizontal scrolling. |
+| Contact form | Existing EmailJS contact form is working. The reviewer's observation that the form was missing does not match the current implementation, so no replacement form was added. |
+| Virtual Museum media | museum.gif is currently used and is approximately 762 KB per Lighthouse. It already uses lazy loading and async decoding. No major performance fix was required for this asset. |
+
+### Must-fix findings
+
+_(to be completed)_
+
+### Actions taken
+
+_(to be completed)_
