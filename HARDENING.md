@@ -119,25 +119,33 @@ The following issues are observed but **not yet fixed**:
 
 ## 8. Hardening Review
 
-- **Reviewer / mentor name:** _(to be completed)_
-- **Review date:** _(to be completed)_
-- **Review method:** _(to be completed — e.g. live walkthrough, code review, Lighthouse audit)_
+* **Reviewer / mentor name:** Fizzah Ahmed
+* **Review date:** 20 September 2026
+* **Review method:** Live walkthrough and structured review of the deployed portfolio
 
 ### Reviewer findings and verification
 
-| Item | Finding |
-|---|---|
-| Resume link | Verified working; the resume PDF exists at the expected path. |
-| GitHub, LinkedIn, and Calendly links | Verified working. |
-| Header navigation | Verified working. |
-| Mobile navigation and layout | Verified working at 375 px with no horizontal scrolling. |
-| Contact form | Existing EmailJS contact form is working. The reviewer's observation that the form was missing does not match the current implementation, so no replacement form was added. |
-| Virtual Museum media | museum.gif is currently used and is approximately 762 KB per Lighthouse. It already uses lazy loading and async decoding. No major performance fix was required for this asset. |
+| Item                                 | Finding                                                                                                                                                                           |
+| ------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Resume link                          | Verified working; the resume PDF exists at the expected path.                                                                                                                     |
+| GitHub, LinkedIn, and Calendly links | Verified working.                                                                                                                                                                 |
+| Header navigation                    | Verified working.                                                                                                                                                                 |
+| Mobile navigation and layout         | Verified working at 375 px with no horizontal scrolling.                                                                                                                          |
+| Contact form                         | Existing EmailJS contact form is working. The reviewer's observation that the form was missing does not match the current implementation, so no replacement form was added.       |
+| Virtual Museum media                 | `museum.gif` is currently used and is approximately 762 KB per Lighthouse. It already uses lazy loading and async decoding. No major performance fix was required for this asset. |
 
 ### Must-fix findings
 
-_(to be completed)_
+* Resume filename/reference was reviewed and updated to the current `Ajiya-Shaukat-Resume.pdf` file.
+* SEO metadata and canonical URL were verified.
+* Large project media assets were optimized from GIF to WebM/MP4 with poster images.
+* Mobile navigation and layout were verified at 375 px.
+* Existing EmailJS contact form was verified as working; no replacement form was required.
 
 ### Actions taken
 
-_(to be completed)_
+* Updated the resume reference to the current resume filename.
+* Added and verified canonical and Open Graph URL metadata.
+* Optimized four large animated project previews.
+* Verified the portfolio on desktop Chrome and at a 375 px mobile viewport.
+* Documented remaining validation, Font Awesome, main-thread, and long-task limitations as known limitations rather than claiming them as fixed.
