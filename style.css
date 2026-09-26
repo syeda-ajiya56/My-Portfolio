@@ -254,7 +254,7 @@ nav {
   background:
     radial-gradient(circle at 75% 40%, rgba(124,58,237,.22), transparent 35%),
     radial-gradient(circle at 20% 80%, rgba(34,211,238,.1), transparent 30%),
-    url("bg6.jpg") center/cover no-repeat;
+    url("project assets and resume/bg6.jpg") center/cover no-repeat;
   opacity: .18;
   z-index: 0;
 }
