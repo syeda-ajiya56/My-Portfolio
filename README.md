@@ -295,19 +295,13 @@ https://github.com/syeda-ajiya56/My-Portfolio
 
 ---
 
-## 12. Demo
+## 11. Live Demo
 
-**FL-09 Demo Video:**
-*To be added after recording.*
+A 3–5 minute live demo of the portfolio is available here:
 
-The demo will show the live portfolio running end-to-end and will explain:
+**[Watch the FL-09 Live Demo](https://youtu.be/p_znV9uAly0)**
 
-* The purpose of the portfolio.
-* The main user journey.
-* One important design decision.
-* The production/hardening work.
-* One current limitation.
-* Where AI assistance was used during development.
+The demo covers the portfolio's purpose, navigation, projects, professional information, a key design decision, and a current limitation.
 
 ---
 
